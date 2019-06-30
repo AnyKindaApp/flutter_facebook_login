@@ -82,11 +82,11 @@
 - (FBSDKLoginBehavior)loginBehaviorFromString:(NSString *)loginBehaviorStr {
   if ([@[ @"nativeWithFallback", @"nativeOnly" ]
           containsObject:loginBehaviorStr]) {
-    return FBSDKLoginBehaviorNative;
+      return FBSDKLoginBehaviorBrowser;
   } else if ([@"webOnly" isEqualToString:loginBehaviorStr]) {
     return FBSDKLoginBehaviorBrowser;
   } else if ([@"webViewOnly" isEqualToString:loginBehaviorStr]) {
-    return FBSDKLoginBehaviorWeb;
+      return FBSDKLoginBehaviorBrowser;
   } else {
     NSString *message = [NSString
         stringWithFormat:@"Unknown login behavior: %@", loginBehaviorStr];
